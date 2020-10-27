@@ -1,17 +1,38 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-button slot="end" (click)="abrirModalAgendamento()" color="secondary">
+      <ion-icon name="Calendar"></ion-icon>
+    </ion-button>
+    <ion-title> DocCenter Saúde </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">Agendamento</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-list>
+    <ion-item *ngFor="let agenda of agendas; let id = index">
+      <ion-avatar slot="start">
+        <img src="https://picsum.photos/200/300" />
+        />
+      </ion-avatar>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+      <ion-label>
+        <h2><ion-text color="dark">{{agenda.nome}}</ion-text></h2>
+      </ion-label>
+      <ion-label>
+        <h2><ion-text color="dark">{{agenda.especialidade}}</ion-text></h2>
+      </ion-label>
+
+      <ion-button slot="end" color="tertiary" (click)="editar(id)"
+        ><ion-icon name="pencil-outline"></ion-icon
+      ></ion-button>
+      <ion-button slot="end" color="danger" (click)="remover(id)"
+        ><ion-icon name="trash-outline"></ion-icon
+      ></ion-button>
+    </ion-item>
+  </ion-list>
 </ion-content>

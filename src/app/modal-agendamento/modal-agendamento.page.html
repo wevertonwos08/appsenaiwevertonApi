@@ -1,0 +1,175 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>modal-agendamento</ion-title>
+    <ion-button slot="end" (click)="fecharModal()" color="secondary">
+      <ion-icon name="close-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form" (ngSubmit)="salvarAgendamento()">
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Nome</ion-label>
+          <ion-input
+            formControlName="nome"
+            placeholder="digite seu nome completo  "
+            type="text"
+            required
+          ></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-list>
+          <ion-item>
+            <ion-label>Sexo</ion-label>
+            <ion-select formControlName="sexo" placeholder="Selecione o Sexo ">
+              <ion-select-option value="feminino">Feminino</ion-select-option>
+              <ion-select-option value="masculino">Masculino</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Data de Nascimento </ion-label>
+          <ion-datetime
+            formControlName="dn"
+            displayFormat="DD/MM/YYYY"
+            placeholder="Selecione a Data do Nascimento "
+          ></ion-datetime>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>CPF</ion-label>
+          <ion-input
+            formControlName="cpf"
+            placeholder="000.000.000.00 "
+            netmask="000.000.000.00"
+            type="text"
+            required
+          ></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Endereço</ion-label>
+          <ion-input
+            formControlName="endereco"
+            type="text"
+            required
+          ></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Telefone</ion-label>
+          <ion-input
+            formControlName="telefone"
+            type="text"
+            required
+          ></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-list-header>
+            <ion-label id="TituloEsp">
+              <h2>Especialidade medica</h2>
+            </ion-label>
+          </ion-list-header>
+
+          <ion-item>
+            <ion-label>Especialidade</ion-label>
+            <ion-select
+              formControlName="especialidade"
+              value="brown"
+              okText="Confirmar"
+              cancelText="Cancelar"
+            >
+              <ion-select-option value="anestesiologia"
+                >Anestesiologista</ion-select-option
+              >
+              <ion-select-option value="angiologia"
+                >Angiologista</ion-select-option
+              >
+              <ion-select-option value="cardiologia"
+                >Cardiologista</ion-select-option
+              >
+              <ion-select-option value="cirurgiaGeral"
+                >Cirurgia Geral</ion-select-option
+              >
+              <ion-select-option value="clinicaMedica"
+                >Clínica Médica</ion-select-option
+              >
+              <ion-select-option value="dermatologia"
+                >Dermatologista</ion-select-option
+              >
+              <ion-select-option value="endocrinologia"
+                >Endocrinologista</ion-select-option
+              >
+              <ion-select-option value="gastroenterologia"
+                >Gastroenterologista</ion-select-option
+              >
+              <ion-select-option value="ginecologia"
+                >Ginecologista</ion-select-option
+              >
+              <ion-select-option value="Otorrinolaringologia"
+                >Otorrinolaringologista</ion-select-option
+              >
+              <ion-select-option value="Pediatria">Pediatria</ion-select-option>
+
+              <ion-select-option value="Psiquiatria"
+                >Psiquiatria</ion-select-option
+              >
+              <ion-select-option value="Oftalmologia"
+                >Urologista</ion-select-option
+              >
+            </ion-select>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Data e hora </ion-label>
+          <ion-datetime
+            formControlName="data_hora"
+            displayFormat="DD/MM/YYYY HH:mm"
+            placeholder="Selecione a data do agendamento "
+          ></ion-datetime>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button
+          (click)=" salvarAgendamento()"
+          type="submit"
+          color="success"
+          expand="block"
+        >
+          {{isEdit === true ? 'Atualizar':'Salvar'}}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </form></ion-content
+>

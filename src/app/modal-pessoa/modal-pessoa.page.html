@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="end" (click)="fecharModal()" color="secondary">
+      <ion-icon name="close-outline"></ion-icon>
+    </ion-button>
+    <ion-title>modal-pessoa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-label id="FotoPessoa"
+          ><img
+            mat-card-image
+            [src]="user.picture.large"
+            alt="Foto do deputado"
+        /></ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <span>Nome: </span>
+        <ion-label>{{user.name.first }}</ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <span>Sobrenome: </span>
+        <ion-label>{{user.name.last }}</ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <span>Sexo: </span>
+        <ion-label color="success">{{user.gender }}</ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <span>Email: </span>
+        <ion-label>{{user.email }}</ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <span>Telefone: </span>
+        <ion-label>{{user.phone }}</ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <span>País : </span>
+        <ion-label>{{user.location.country }}</ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <span>Estado : </span>
+        <ion-label>{{user.location.state }}</ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+</ion-content>
